@@ -8,6 +8,9 @@ public class BlinkText : MonoBehaviour
     /** Declaro 2 espacios para los GameObjects, los Menus**/
     [SerializeField] private GameObject insertMenu;
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject backgroundMusicGO;
+    [SerializeField] private GameObject scrollingBackgroundGO;
+
 
     /** Declaro un espacio para el GameObject Text de InsertCoin 
      * Y una variable float para el tiempo de repeticion de la funcion ChangeState**/
@@ -18,10 +21,13 @@ public class BlinkText : MonoBehaviour
     [SerializeField] private AudioSource coinSound;
 
 
+
+
     void Start()
     {
         /** Activo desde el incio el menu 'InsertCoin' y desactivo desde el inicio el menu 'MainMenu'**/
         insertMenu.SetActive(true);
+        scrollingBackgroundGO.SetActive(false);
         mainMenu.SetActive(false);
 
         /**Invoca la funcion 'ChangeState', despues de un segundo, 
@@ -35,8 +41,10 @@ public class BlinkText : MonoBehaviour
     void ChangeMenus()
     {
             insertMenu.SetActive(false);
-            mainMenu.SetActive(true);
             gameObject.SetActive(false);
+            scrollingBackgroundGO.SetActive(true);
+            mainMenu.SetActive(true);
+            backgroundMusicGO.SetActive(true);
     }
 
     /** Metodo que cambia el estado activo del GameObject 'insertCoinText' a su negativo
