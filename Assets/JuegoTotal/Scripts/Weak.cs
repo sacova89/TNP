@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Weak : MonoBehaviour
 {
-    public string sceneToLoad;
+    [SerializeField] private GameObject youLosePanel;
     private void Start()
     {
 
@@ -17,7 +17,8 @@ public class Weak : MonoBehaviour
         if (other.CompareTag("Fantasma"))
         {
             Destroy(gameObject);
-            SceneManager.LoadScene (sceneToLoad);
+            Time.timeScale = 0f;
+            youLosePanel.SetActive(true);
             
         }
      
