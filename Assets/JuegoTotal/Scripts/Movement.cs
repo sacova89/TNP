@@ -24,8 +24,8 @@ public class Movement : MonoBehaviour
         if (move != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), rotationSpeed * Time.deltaTime);
-        }
+        } 
 
 
     }
-}
+ }

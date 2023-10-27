@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-
 public class Score : MonoBehaviour
 {
     public int Puntaje = 0;
     public GameObject cherry;
     public TMP_Text scoreT;
+    
 
     [SerializeField] private GameObject youWinPanel;
 
@@ -40,7 +40,6 @@ public class Score : MonoBehaviour
             scoreT.text = "GANASTE!";
             Time.timeScale = 0f;
             youWinPanel.SetActive(true);
-
         }
     }
  }

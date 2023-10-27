@@ -18,10 +18,13 @@ public class FollowMe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (target2 != null) // Comprueba si target2 no es nulo antes de acceder a su posición.
+        {
         if (Vector3.Distance(dest2, target2.position) > 1.0f)
         {
             dest2 = target2.position;
             agente2.destination = dest2;
+        }
         }
     }
 }
