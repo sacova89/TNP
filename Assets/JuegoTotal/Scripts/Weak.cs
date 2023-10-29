@@ -8,6 +8,13 @@ using UnityEngine.SceneManagement;
 public class Weak : MonoBehaviour
 {
     [SerializeField] private GameObject youLosePanel;
+    [SerializeField] private GameObject pauseButton;
+    [SerializeField] private GameObject scoreTextGO;
+    [SerializeField] private GameObject scoreTextTittleGO;
+
+    [SerializeField] private AudioSource loseSoundEffect;
+
+
     private void Start()
     {
 
@@ -19,13 +26,14 @@ public class Weak : MonoBehaviour
             Destroy(gameObject);
             Time.timeScale = 0f;
             youLosePanel.SetActive(true);
-            
+            scoreTextGO.SetActive(false);
+            scoreTextTittleGO.SetActive(false);
+            pauseButton.SetActive(false);
+            loseSoundEffect.Play();
+
+
         }
      
     }
 
-    private void Update()
-    {
-        
-    }
 }

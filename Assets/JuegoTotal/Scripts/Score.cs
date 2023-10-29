@@ -9,8 +9,13 @@ public class Score : MonoBehaviour
     public GameObject cherry;
     public TMP_Text scoreT;
     
-
     [SerializeField] private GameObject youWinPanel;
+    [SerializeField] private GameObject scoreTextGO;
+    [SerializeField] private GameObject scoreTextTittleGO;
+    [SerializeField] private GameObject pauseButton;
+
+    [SerializeField] private AudioSource winSoundEffect;
+
 
 
     private void Update()
@@ -31,7 +36,7 @@ public class Score : MonoBehaviour
         {
             Destroy(other.gameObject);
             Puntaje++;
-            scoreT.text = "Score: " + Puntaje;
+            scoreT.text = " " + Puntaje;
         }
 
         if(other.gameObject.CompareTag("Cherry"))
@@ -40,6 +45,11 @@ public class Score : MonoBehaviour
             scoreT.text = "GANASTE!";
             Time.timeScale = 0f;
             youWinPanel.SetActive(true);
+            scoreTextGO.SetActive(false);
+            scoreTextTittleGO.SetActive(false);
+            pauseButton.SetActive(false);
+            winSoundEffect.Play();
+
         }
     }
  }

@@ -27,4 +27,10 @@ public class PauseController : MonoBehaviour
         Time.timeScale = 1f;
         menuPanel.SetActive(false);
     }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
